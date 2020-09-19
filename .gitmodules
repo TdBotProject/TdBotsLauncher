@@ -1,0 +1,6 @@
+[submodule "ktlib"]
+	path = ktlib
+	url = https://github.com/nekohasekai/ktlib
+[submodule "pm"]
+	path = pm
+	url = https://github.com/TdBotProject/TdPmBot

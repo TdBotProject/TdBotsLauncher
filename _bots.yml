@@ -1,0 +1,11 @@
+BOT_LANG: zh_CN
+LOG_LEVEL: INFO
+DATA_DIR: data
+CACHE_DIR: cache
+BOTS:
+  - ID: main
+    TYPE: pm
+    BOT_TOKEN:
+    B0T_OWNER:
+    PM_MODE: private
+    PM_WHITE_LIST:
