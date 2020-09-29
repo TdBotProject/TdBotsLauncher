@@ -4,6 +4,7 @@ package io.nekohasekai.bots
 
 import cn.hutool.core.io.file.FileNameUtil
 import io.nekohasekai.ktlib.td.cli.TdCli
+import io.nekohasekai.ktlib.td.core.TdBridge
 import io.nekohasekai.pm.TdPmBot
 import kotlinx.coroutines.runBlocking
 import java.io.File
@@ -41,6 +42,8 @@ object Launcher : TdCli("Launcher") {
             exitProcess(100)
 
         }
+
+        TdBridge.setBridge { botInstances[it] }
 
         bots.forEachIndexed { index, it ->
 
@@ -99,11 +102,11 @@ object Launcher : TdCli("Launcher") {
 
                 config.remove("LOG_LEVEL")
 
-                onLoadConfig()
-
             }
 
         }
+
+        botInstances.values.forEach { it.onLoadConfig() }
 
         if (::runTarget.isInitialized) {
 
